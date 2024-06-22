@@ -1,14 +1,15 @@
-.env.*
+.env
 .venv
 .vscode
 .dockerignore
 .gitignore
 .DS_Store
+.git
 
 /images
 /scripts
 
 readme.md
 
-docker-compose.yml
+docker-compose.yaml
 Dockerfile

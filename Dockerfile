@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copia o arquivo requirements.txt para o contêiner
 COPY requirements.txt .
+COPY .env.production .env
 
 # Instala as dependências do Python
 RUN pip install --no-cache-dir -r requirements.txt
