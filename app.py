@@ -1,4 +1,8 @@
 from flask import Flask, jsonify
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -24,9 +28,12 @@ def route_1():
         {"id": 5, "name": "Deep Learning with Python",
             "description": "Explore deep learning with Python"}
     ]
+    env = os.getenv('FLASK_ENV')
+    app_name = os.getenv('FLASK_APP_NAME')
 
-    return jsonify({"people": people, "courses": courses})
+    return jsonify({"env": env, "app_name": app_name, "people": people, "courses": courses, })
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=os.getenv('PORT'), debug=os.getenv(
+        'FLASK_ENV') == 'development')
