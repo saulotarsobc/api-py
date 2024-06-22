@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Define o comando padrão para execução do contêiner
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0"]
