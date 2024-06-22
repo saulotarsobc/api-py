@@ -1,2 +1,14 @@
 .env
 .venv
+.vscode
+.dockerignore
+.gitignore
+.DS_Store
+
+/images
+/scripts
+
+readme.md
+
+docker-compose.yml
+Dockerfile
