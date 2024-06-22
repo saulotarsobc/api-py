@@ -4,33 +4,28 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def hello():
-    return jsonify(message="Hello, World!")
+def route_1():
+    people = [
+        {"id": 1, "name": "Alice", "age": 30, "email": "alice@example.com"},
+        {"id": 2, "name": "Bob", "age": 25, "email": "bob@example.com"},
+        {"id": 3, "name": "Charlie", "age": 35, "email": "charlie@example.com"},
+        {"id": 4, "name": "David", "age": 40, "email": "david@example.com"},
+        {"id": 5, "name": "Eve", "age": 28, "email": "eve@example.com"}
+    ]
+    courses = [
+        {"id": 1, "name": "Introduction to Programming",
+            "description": "Learn the basics of programming"},
+        {"id": 2, "name": "Advanced Python Programming",
+            "description": "Master the art of Python programming"},
+        {"id": 3, "name": "Data Science with Python",
+            "description": "Get started with data science with Python"},
+        {"id": 4, "name": "Machine Learning with Python",
+            "description": "Master machine learning with Python"},
+        {"id": 5, "name": "Deep Learning with Python",
+            "description": "Explore deep learning with Python"}
+    ]
 
-
-@app.route('/a', methods=['GET'])
-def hello_a():
-    return jsonify(message="a")
-
-
-@app.route('/b', methods=['GET'])
-def hello_b():
-    return jsonify(message="b")
-
-
-@app.route('/c', methods=['GET'])
-def hello_c():
-    return jsonify(message="c")
-
-
-@app.route('/d', methods=['GET'])
-def hello_d():
-    return jsonify(message="d")
-
-
-@app.route('/e', methods=['GET'])
-def hello_e():
-    return jsonify(message="e")
+    return jsonify({"people": people, "courses": courses})
 
 
 if __name__ == '__main__':
